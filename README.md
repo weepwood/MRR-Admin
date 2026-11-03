@@ -63,6 +63,10 @@ npm run preview
 
 组件与主题参考 [satnaing/shadcn-admin](https://github.com/satnaing/shadcn-admin)（MIT License，版权 © 2024 Sat Naing），保留其 `LICENSE`、基础 UI 组件和设计令牌。采用 React 19、Tailwind CSS v4、TanStack Query / Router、Lucide 和 Recharts；删除原模板与医疗业务无关的演示页面。
 
+## 浏览器兼容提示
+
+此版本基于上游 shadcn-admin 的 Tailwind CSS v4 技术栈，**尚未确认兼容原 MRR 要求的 Chrome 109**。上线前必须验证目标院内浏览器；若必须保留 Chrome 109，应另行制定 Tailwind CSS v3 / CSS 回退方案，而不能仅以现代浏览器构建成功代替验收。
+
 ## 后续阶段
 
 患者编辑 / 导入、用户审核与角色维护、OCR 审核、OSS 迁移、运行诊断与日志审计、异步导出任务、文档和更多影像浏览交互需要继续按 MRR 的真实接口、权限和异常响应逐项实现。当前不将这些功能声明为已完成。
