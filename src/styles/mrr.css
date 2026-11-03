@@ -1,0 +1,14 @@
+body {
+  font-family: Inter, 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+}
+:root { --primary: oklch(0.53 0.19 256); --primary-foreground: oklch(0.99 0 0); --ring: oklch(0.67 0.13 255); }
+.dark { --primary: oklch(0.75 0.13 250); --primary-foreground: oklch(0.17 0.04 260); }
+::selection { background: oklch(0.82 0.08 250 / 0.45); }
+.mrr-sidebar-link { transition: color 140ms ease, background-color 140ms ease; }
+.mrr-sidebar-link[data-active="true"] { background: var(--accent); color: var(--foreground); font-weight: 600; }
+.mrr-table-wrap { width: 100%; overflow-x: auto; scrollbar-width: thin; }
+.mrr-kpi { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
