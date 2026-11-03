@@ -76,3 +76,13 @@ export async function downloadCsv(path: string, filename: string) {
   anchor.remove()
   window.setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
+
+/** 通过带 JWT 的请求获取图片，不将令牌放在图片 URL 中。 */
+export async function fetchProtectedBlob(path: string, signal?: AbortSignal): Promise<Blob> {
+  const response = await execute(path, { signal })
+  if (!response.ok) throw new ApiError('影像加载失败，请检查权限或文件是否存在', response.status)
+  if (response.headers.get('content-type')?.includes('application/json')) {
+    throw new ApiError('影像接口未返回图片文件', response.status)
+  }
+  return response.blob()
+}
